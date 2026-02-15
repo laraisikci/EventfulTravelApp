@@ -119,3 +119,20 @@ if st.button("✨ SURPRISE ME ✨"):
         st.metric("Convenience Match", "94%", delta="High Compatibility")
     
     st.balloons()
+
+def fetch_real_events(city_name):
+    # Your real API key goes here after you finish that form!
+    api_key = "9Rri7l1kutIcmyOqcbKstEN88GkcPGy7" 
+    url = f"https://app.ticketmaster.com/discovery/v2/events.json?city={city_name}&apikey={api_key}"
+    
+    try:
+        response = requests.get(url)
+        data = response.json()
+
+        if "_embedded" in data:
+            events = data['_embedded']['events'][:3] # Get the top 3
+            return events
+        return [] # Return empty if no events found
+    except Exception as e:
+        st.error(f"API Error: {e}")
+        return []
