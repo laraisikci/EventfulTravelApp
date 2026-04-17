@@ -150,7 +150,7 @@ def energy_emoji(v):
     return "⚡ Full power!"
 
 def social_emoji(v):
-    if v <= 25: return "🪨 Hermit mode"
+    if v <= 25: return "💆🏻‍♀️ Don't call me, I'm busy"
     if v <= 50: return "🤝 Selective"
     if v <= 75: return "😄 Sociable"
     return "🎉 Party animal!"
@@ -852,7 +852,7 @@ if st.session_state.recommendation_done:
 
     # ── Agent Debate ──
     if debate:
-        st.markdown("<div class='sec-label'>Multi-Agent Analysis</div><div class='sec-title'>The AI Jury 🤖</div>", unsafe_allow_html=True)
+        st.markdown("<div class='sec-label'>Multi-Agent Analysis</div><div class='sec-title'>The AI Juries 🤖</div>", unsafe_allow_html=True)
         st.markdown("""
         <div style='background:#fff3ee;border-radius:14px;padding:16px 20px;margin-bottom:20px;border-left:4px solid #ff6b35;'>
             <p style='margin:0;font-size:14px;color:#374151;line-height:1.6;'>
